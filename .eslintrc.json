@@ -1,3 +1,32 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    },
+    {
+      "files": ["tests/**/*"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:jest-dom/recommended"
+      ]
+    },
+    {
+      "files": ["e2e/**/*"],
+      "extends": ["plugin:playwright/playwright-test"]
+    }
+  ],
+  "rules": {
+    "quotes": ["error", "double"],
+    "semi": ["error", "never"]
+  }
 }
