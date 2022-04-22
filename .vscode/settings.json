@@ -1,5 +1,6 @@
 {
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "jest.jestCommandLine": "node_modules\\.bin\\jest",
-  "jest.debugCodeLens.showWhenTestStateIn": ["fail"]
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "jest.jestCommandLine": "node_modules/.bin/jest",
+  "jest.debugCodeLens.showWhenTestStateIn": ["fail"],
+  "jest.autoRun": "off"
 }

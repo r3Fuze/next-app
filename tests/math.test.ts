@@ -1,4 +1,4 @@
-import { add, multiply, subtract } from "../lib/math"
+import { add, divide, multiply, subtract } from "../lib/math"
 
 describe("Math.add", () => {
   it("should add two numbers", () => {
@@ -15,5 +15,9 @@ describe("Math.add", () => {
 
   it("should not multiply two numbers when run is false", () => {
     expect(multiply(4, 2, false)).toBe(0)
+  })
+
+  it("should divide two numbers", () => {
+    expect(divide(10, 2)).toBe(5)
   })
 })

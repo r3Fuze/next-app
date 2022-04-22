@@ -13,3 +13,7 @@ export function multiply(a: number, b: number, run: boolean): number {
     return 0
   }
 }
+
+export function divide(a: number, b: number): number {
+  return a / b
+}
