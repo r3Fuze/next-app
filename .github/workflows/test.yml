@@ -10,6 +10,7 @@ on:
 
 env:
   FORCE_COLOR: 1
+  playwright_version: 1.21.1
 
 jobs:
   test:
@@ -32,11 +33,19 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
+      - name: Cache Playwright binaries
+        uses: actions/cache@v3
+        id: playwright-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: cache-playwright-linux-${{ env.playwright_version }}
       - name: Install Playwright
+        if: steps.playwright-cache.outputs.cache-hit != "true"
         run: pnpm exec playwright install --with-deps
       - name: Run jest tests
-        run: pnpm test
-      - name: Run playwright tests
+        run: pnpm test:ci
+      - name: Run Playwright tests
         run: pnpm test:e2e
       - name: Upload test results
         if: always()
