@@ -1,3 +1,4 @@
+import Card from "@/components/Card"
 import type { NextPage } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,36 +18,30 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
+          <Card
+            href="https://nextjs.org/docs"
+            title="Documentation"
+            description="Find in-depth information about Next.js features and API."
+          />
+          <Card
+            href="https://nextjs.org/learn"
+            title="Learn"
+            description="Learn about Next.js in an interactive course with quizzes!"
+          />
+          <Card
             href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
+            title="Examples"
+            description="Discover and deploy boilerplate example Next.js projects."
+          />
+          <Card
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            title="Deploy"
+            description="Instantly deploy your Next.js site to a public URL with Vercel."
+          />
+
           <Link href="/about">
             <a className={styles.card}>
-              <h2>About</h2>
+              <h2>About &rarr;</h2>
               <p>Go to the about page!</p>
             </a>
           </Link>
