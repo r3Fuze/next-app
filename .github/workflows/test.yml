@@ -41,7 +41,7 @@ jobs:
             ~/.cache/ms-playwright
           key: cache-playwright-linux-${{ env.playwright_version }}
       - name: Install Playwright
-        if: steps.playwright-cache.outputs.cache-hit != "true"
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: pnpm exec playwright install --with-deps
       - name: Run jest tests
         run: pnpm test:ci
