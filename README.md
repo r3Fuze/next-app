@@ -1,3 +1,5 @@
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1b3530142323aaa7b54b/test_coverage)](https://codeclimate.com/github/r3Fuze/next-app/test_coverage)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
