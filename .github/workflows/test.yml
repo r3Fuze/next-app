@@ -53,3 +53,9 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report
+      - name: Upload code coverage
+        uses: paambaati/codeclimate-action@v2.2.4
+        env:
+          CC_TEST_REPORTER_ID: 75bd5ba3780bef628be78e35d58566ac4d0f6a277c6239f5551d6c52f354da26
+        with:
+          coverageCommand: pnpm coverage

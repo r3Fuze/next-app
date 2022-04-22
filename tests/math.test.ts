@@ -9,7 +9,7 @@ describe("Math.add", () => {
     expect(subtract(3, 1)).toBe(2)
   })
 
-  it("should multiply two numbers when run is true", () => {
+  it.skip("should multiply two numbers when run is true", () => {
     expect(multiply(4, 2, true)).toBe(8)
   })
 
