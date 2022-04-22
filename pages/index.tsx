@@ -38,13 +38,11 @@ const Home: NextPage = () => {
             title="Deploy"
             description="Instantly deploy your Next.js site to a public URL with Vercel."
           />
-
-          <Link href="/about">
-            <a className={styles.card}>
-              <h2>About &rarr;</h2>
-              <p>Go to the about page!</p>
-            </a>
-          </Link>
+          <Card
+            href="/about"
+            title="About"
+            description="Go to the about page!"
+          />
         </div>
       </main>
 
