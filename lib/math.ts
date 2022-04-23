@@ -25,3 +25,10 @@ export function min(numbers: number[]): number {
 export function max(numbers: number[]): number {
   return Math.max(...numbers)
 }
+
+export function fibonacci(n: number): number {
+  const phi = (1 + Math.sqrt(5)) / 2
+  const asymp = Math.pow(phi, n) / Math.sqrt(5)
+
+  return Math.round(asymp)
+}
