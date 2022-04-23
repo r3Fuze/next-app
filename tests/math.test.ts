@@ -97,12 +97,15 @@ describe("math", () => {
 
     it("should throw an error if any input is NaN", () => {
       const errorMessage = "Inputs cannot be NaN"
+
       expect(() => {
         isBetween(NaN, 1, 3)
       }).toThrow(errorMessage)
+
       expect(() => {
         isBetween(2, NaN, 3)
       }).toThrow(errorMessage)
+
       expect(() => {
         isBetween(2, 1, NaN)
       }).toThrow(errorMessage)
