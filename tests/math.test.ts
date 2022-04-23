@@ -1,4 +1,4 @@
-import { add, divide, max, multiply, subtract } from "../lib/math"
+import { add, divide, max, min, multiply, subtract } from "../lib/math"
 
 describe("Math.add", () => {
   it("should add two numbers", () => {
@@ -27,5 +27,13 @@ describe("Math.add", () => {
 
   it("should find the largest number in an array of numbers when they are negative", () => {
     expect(max([-1, -2, -3])).toBe(-1)
+  })
+
+  it("should find the smallest number in an array of numbers", () => {
+    expect(min([2, 4, 6])).toBe(2)
+  })
+
+  it("should find the smallest number in an array of numbers when they are negative", () => {
+    expect(min([-1, -2, -3])).toBe(-3)
   })
 })
