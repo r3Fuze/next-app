@@ -22,7 +22,7 @@ describe("Math.add", () => {
   })
 
   it("should find the largest number in an array of numbers", () => {
-    expect(max([1, 2, 3])).toBe(3)
+    expect(max([2, 4, 6])).toBe(6)
   })
 
   it("should find the largest number in an array of numbers when they are negative", () => {
