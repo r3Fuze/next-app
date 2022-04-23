@@ -32,3 +32,15 @@ export function fibonacci(n: number): number {
 
   return Math.round(asymp)
 }
+
+export function isBetween(n: number, start: number, end: number): boolean {
+  if (start > end) {
+    throw new Error("Start number cannot be greater than end number")
+  }
+
+  if ([n, start, end].every((val) => Number.isNaN(val))) {
+    throw new Error("Inputs cannot be NaN")
+  }
+
+  return n > start && n < end
+}
