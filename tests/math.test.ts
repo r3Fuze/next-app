@@ -94,5 +94,18 @@ describe("math", () => {
     it("should return false when the number is not between the start and end", () => {
       expect(isBetween(4, 1, 3)).toBe(false)
     })
+
+    it("should throw an error if any input is NaN", () => {
+      const errorMessage = "Inputs cannot be NaN"
+      expect(() => {
+        isBetween(NaN, 1, 3)
+      }).toThrow(errorMessage)
+      expect(() => {
+        isBetween(2, NaN, 3)
+      }).toThrow(errorMessage)
+      expect(() => {
+        isBetween(2, 1, NaN)
+      }).toThrow(errorMessage)
+    })
   })
 })
