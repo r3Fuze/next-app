@@ -7,7 +7,7 @@ import {
   min,
   multiply,
   subtract,
-} from "../lib/math"
+} from "@/lib/math"
 
 describe("math", () => {
   describe(".add", () => {

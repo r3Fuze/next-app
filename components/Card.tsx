@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "../styles/Card.module.css"
+import styles from "@/styles/Card.module.css"
 
 type PartialURL = Partial<URL> & { pathname: string }
 
