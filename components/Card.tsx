@@ -3,11 +3,19 @@ import styles from "../styles/Card.module.css"
 
 type PartialURL = Partial<URL> & { pathname: string }
 
-// Extract into own component?
-const LinkWrapper: React.FC<{
+type LinkWrapperProps = {
   href: string | PartialURL
   children: React.ReactNode
-}> = ({ href, children }) => {
+}
+
+type CardProps = {
+  href: string | PartialURL
+  title: string
+  description: string
+}
+
+// Extract into own component?
+const LinkWrapper = ({ href, children }: LinkWrapperProps) => {
   const isExternal =
     typeof href === "string"
       ? href.startsWith("http")
@@ -20,16 +28,12 @@ const LinkWrapper: React.FC<{
   }
 }
 
-const Card: React.FC<{
-  href: string | PartialURL
-  title: string
-  description: string
-}> = (props) => {
+const Card = ({ href, title, description }: CardProps) => {
   return (
-    <LinkWrapper href={props.href}>
-      <a href={props.href as string} className={styles.card}>
-        <h2>{props.title} &rarr;</h2>
-        <p>{props.description}</p>
+    <LinkWrapper href={href}>
+      <a href={href as string} className={styles.card}>
+        <h2>{title} &rarr;</h2>
+        <p>{description}</p>
       </a>
     </LinkWrapper>
   )
