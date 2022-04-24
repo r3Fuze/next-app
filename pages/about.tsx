@@ -1,9 +1,23 @@
 import type { NextPage } from "next"
+import Link from "next/link"
+import useFetch from "@/lib/useFetch"
+
+type ApiResponse = {
+  name: string
+}
 
 const About: NextPage = () => {
+  const { data, error, isLoading } = useFetch<ApiResponse>("/api/hello")
+
+  if (error) return <div>Failed to load</div>
+  if (isLoading) return <div>Loading...</div>
+
   return (
     <div>
       <h1>About Page</h1>
+      <span>{data?.name}</span>
+      <br />
+      <Link href="/">Go home</Link>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quas
         nesciunt quaerat cupiditate illo vero a nostrum minima molestias,
