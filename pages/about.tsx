@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import Link from "next/link"
-import useFetch from "@/lib/useFetch"
+import useFetch from "@/hooks/useFetch"
 
 type ApiResponse = {
   name: string

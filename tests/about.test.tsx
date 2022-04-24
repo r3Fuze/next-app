@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import About from "@/pages/about"
 
-jest.mock("@/lib/useFetch", () => {
+jest.mock("@/hooks/useFetch", () => {
   return () => ({
     data: {
       name: "John Doe",
