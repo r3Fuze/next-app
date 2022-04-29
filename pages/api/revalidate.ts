@@ -42,6 +42,8 @@ export default async function handler(
     return res.status(401).json({ message: "Invalid token" })
   }
 
+  console.log("Post title", post.title)
+
   try {
     await client.clearStore()
     await client.resetStore()
