@@ -12,7 +12,9 @@ const customJestConfig = {
   moduleNameMapper: {
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
+    "^@/graphql/(.*)$": "<rootDir>/graphql/$1",
     "^@/styles/(.*)$": "<rootDir>/styles/$1",
+    "^@/public/(.*)$": "<rootDir>/public/$1",
     "^@/lib/(.*)$": "<rootDir>/lib/$1",
     "^@/hooks/(.*)$": "<rootDir>/hooks/$1",
   },

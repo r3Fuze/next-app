@@ -24,6 +24,7 @@
       "extends": ["plugin:playwright/playwright-test"]
     }
   ],
+  "ignorePatterns": "graphql/generated/graphql.tsx",
   "rules": {
     "quotes": ["error", "double"],
     "semi": ["error", "never"]

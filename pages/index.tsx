@@ -40,7 +40,12 @@ const Home: NextPage = () => {
           <Card
             href="/about"
             title="About"
-            description="Go to the about page!"
+            description="Go to the about page! There are things about things there!"
+          />
+          <Card
+            href="/blog"
+            title="Blog"
+            description="Go to the blog page! A page where there a blog posts!"
           />
         </div>
       </main>

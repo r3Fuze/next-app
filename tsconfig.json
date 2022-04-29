@@ -20,6 +20,8 @@
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
+      "@/public/*": ["public/*"],
+      "@/graphql/*": ["graphql/*"],
       "@/lib/*": ["lib/*"],
       "@/hooks/*": ["hooks/*"]
     },
