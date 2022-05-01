@@ -1,3 +1,5 @@
+import "styled-components"
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -8,6 +10,16 @@ declare global {
       BASE_URL: string
       REVALIDATE_TOKEN: string
       GRAPHCMS_SIGNATURE: string
+    }
+  }
+}
+
+// and extend them!
+declare module "styled-components" {
+  export interface DefaultTheme {
+    colors: {
+      primary: string
+      secondary: string
     }
   }
 }

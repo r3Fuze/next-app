@@ -1,7 +1,6 @@
 import type { Post } from "@/graphql/generated/graphql"
 import type { NextApiRequest, NextApiResponse } from "next"
 import { verifyWebhookSignature } from "@/lib/utils"
-import client from "@/graphql/apollo-client"
 
 interface NextApiRequestWithBody extends NextApiRequest {
   body: {
@@ -45,8 +44,6 @@ export default async function handler(
   console.log("Post title", post.title)
 
   try {
-    await client.clearStore()
-    await client.resetStore()
     await res.unstable_revalidate(`/blog/${post.slug}`)
     console.log(`Revalidated /blog/${post.slug}`)
     return res.json({ revalidated: true })

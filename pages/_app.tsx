@@ -6,7 +6,36 @@ import NProgress from "nprogress"
 
 import favicon from "@/public/favicon.ico"
 import "@/styles/nprogress.css"
-import "@/styles/globals.css"
+import {
+  createGlobalStyle,
+  DefaultTheme,
+  ThemeProvider,
+} from "styled-components"
+
+const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`
+
+const theme: DefaultTheme = {
+  colors: {
+    primary: "#0070f3",
+  },
+}
 
 const meta: DefaultSeoProps = {
   titleTemplate: "%s | Next",
@@ -20,7 +49,7 @@ const meta: DefaultSeoProps = {
   ],
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+function CustomApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   NProgress.configure({
@@ -44,10 +73,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div>
+      <GlobalStyle />
       <DefaultSeo {...meta} />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </div>
   )
 }
 
-export default MyApp
+export default CustomApp

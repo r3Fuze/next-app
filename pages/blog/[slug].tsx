@@ -6,6 +6,11 @@ import { Post } from "@/graphql/generated/graphql"
 import client from "@/graphql/apollo-client"
 import { GET_ALL_POSTS, GET_POST_BY_SLUG } from "@/graphql/queries"
 import Link from "next/link"
+import styled from "styled-components"
+
+const Title = styled.h1`
+  color: ${(props) => props.theme.colors.primary};
+`
 
 const BlogPost: NextPage<{ post: Post }> = ({ post }) => {
   const router = useRouter()
@@ -19,7 +24,7 @@ const BlogPost: NextPage<{ post: Post }> = ({ post }) => {
         <Link href="/blog">
           <a>Go back</a>
         </Link>
-        <h1>{post.title}</h1>
+        <Title>{post.title}</Title>
         <p>{post.content}</p>
       </div>
     </>

@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components",
+    "stylelint-config-prettier"
+  ],
+  "ignoreFiles": ["node_modules/**/*", "coverage/**/*", ".next/**/*"],
+  "overrides": [
+    {
+      "files": "**/*.{ts,tsx}",
+      "customSyntax": "postcss-jsx"
+    }
+  ],
+  "rules": {
+    "declaration-empty-line-before": null,
+    "function-no-unknown": [true, { "ignoreFunctions": ["${"] }]
+  }
+}

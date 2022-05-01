@@ -1,15 +1,21 @@
 import { Post } from "@/graphql/generated/graphql"
 import { GetStaticProps, NextPage } from "next"
 import Link from "next/link"
+import { NextSeo } from "next-seo"
 import client from "@/graphql/apollo-client"
 import { GET_ALL_POSTS } from "@/graphql/queries"
-import { NextSeo } from "next-seo"
+import styled from "styled-components"
+
+const Container = styled.div`
+  margin: 0 auto;
+  max-width: 900px;
+`
 
 const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
   return (
     <>
       <NextSeo title="Posts" />
-      <div className="blog">
+      <Container className="blog">
         <Link href="/">
           <a>Go home</a>
         </Link>
@@ -23,7 +29,7 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
             </h2>
           ))}
         </div>
-      </div>
+      </Container>
     </>
   )
 }
