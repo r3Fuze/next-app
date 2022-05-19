@@ -1,41 +1,33 @@
 import Link from "next/link"
 import styles from "@/styles/Card.module.css"
+import type { UrlObject } from "url"
 
-type PartialURL = Partial<URL> & { pathname: string }
-
-type LinkWrapperProps = {
-  href: string | PartialURL
-  children: React.ReactNode
-}
+type Url = string | UrlObject
 
 type CardProps = {
-  href: string | PartialURL
+  href: Url
   title: string
   description: string
 }
 
-// Extract into own component?
-const LinkWrapper = ({ href, children }: LinkWrapperProps) => {
-  const isExternal =
-    typeof href === "string"
-      ? href.startsWith("http")
-      : href.protocol !== undefined
-
-  if (isExternal) {
-    return <>{children}</>
+const isExternal = (href: Url): boolean => {
+  if (typeof href === "string") {
+    return href.startsWith("http")
   } else {
-    return <Link href={href}>{children}</Link>
+    return href.protocol !== undefined
   }
 }
 
 const Card = ({ href, title, description }: CardProps) => {
+  const LinkElement = isExternal(href) ? "a" : Link
+
   return (
-    <LinkWrapper href={href}>
-      <a href={href as string} className={styles.card}>
+    <LinkElement href={href as undefined & Url} className={styles.card}>
+      <>
         <h2>{title} &rarr;</h2>
         <p>{description}</p>
-      </a>
-    </LinkWrapper>
+      </>
+    </LinkElement>
   )
 }
 

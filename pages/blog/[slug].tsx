@@ -19,7 +19,7 @@ const BlogPost: NextPage<{ post: Post }> = ({ post }) => {
         <Link href="/blog">
           <a>Go back</a>
         </Link>
-        <h1>{post.title}</h1>
+        <h1 className="text-5xl font-medium">{post.title}</h1>
         <p>{post.content}</p>
       </div>
     </>

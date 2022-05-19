@@ -9,14 +9,14 @@ const Blog: NextPage<{ posts: Post[] }> = ({ posts }) => {
   return (
     <>
       <NextSeo title="Posts" />
-      <div className="blog">
+      <div>
         <Link href="/">
           <a>Go home</a>
         </Link>
         <h1>This is my blog</h1>
         <div className="posts">
           {posts.map((post) => (
-            <h2 className="post" key={post.id}>
+            <h2 key={post.id}>
               <Link href={`/blog/${post.slug}`}>
                 <a className="post">{post.title}</a>
               </Link>

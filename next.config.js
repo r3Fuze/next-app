@@ -11,6 +11,9 @@ const nextConfig = {
   images: {
     domains: ["media.graphassets.com"],
   },
+  experimental: {
+    newNextLinkBehavior: true,
+  },
 }
 
 module.exports = withBundleAnalyzer(nextConfig)

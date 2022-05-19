@@ -6,7 +6,7 @@ import NProgress from "nprogress"
 
 import favicon from "@/public/favicon.ico"
 import "@/styles/nprogress.css"
-import "@/styles/globals.css"
+import "@/styles/global.css"
 
 const meta: DefaultSeoProps = {
   titleTemplate: "%s | Next",
@@ -20,7 +20,7 @@ const meta: DefaultSeoProps = {
   ],
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+function CustomApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   NProgress.configure({
@@ -50,4 +50,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default CustomApp

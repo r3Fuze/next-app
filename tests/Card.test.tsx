@@ -21,32 +21,8 @@ describe("<Card />", () => {
     expect(paragraph).toBeInTheDocument()
   })
 
-  it("has an anchor tag if the link is internal", () => {
-    render(<Card href="/" title="" description="" />)
-
-    const anchor = screen.getByRole("link")
-
-    expect(anchor).toBeInTheDocument()
-  })
-
   it("has an anchor tag if the link is external", () => {
     render(<Card href="https://github.com" title="" description="" />)
-
-    const anchor = screen.getByRole("link")
-
-    expect(anchor).toBeInTheDocument()
-  })
-
-  it("has an anchor tag if the link is a URL object", () => {
-    render(
-      <Card
-        href={{
-          pathname: "/",
-        }}
-        title=""
-        description=""
-      />
-    )
 
     const anchor = screen.getByRole("link")
 

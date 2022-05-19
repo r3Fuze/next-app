@@ -27,6 +27,7 @@
   "ignorePatterns": "graphql/generated/graphql.tsx",
   "rules": {
     "quotes": ["error", "double"],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "jest/no-focused-tests": "warn"
   }
 }

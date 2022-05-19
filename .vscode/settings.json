@@ -1,5 +1,11 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "jest.jestCommandLine": "node_modules/.bin/jest",
-  "jest.debugCodeLens.showWhenTestStateIn": ["fail"]
+  "jest.debugCodeLens.showWhenTestStateIn": ["fail"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
